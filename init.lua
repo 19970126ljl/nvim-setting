@@ -62,3 +62,15 @@ vim.keymap.set('n', '<leader>/', '<cmd>Telescope current_buffer_fuzzy_find<CR>',
 vim.keymap.set('n', '<leader>*', function()
   require('telescope.builtin').current_buffer_fuzzy_find({ default_text = vim.fn.expand('<cword>') })
 end, { desc = 'Search word in buffer' })
+vim.keymap.set('n', '<leader>fd', function()
+  local dir = vim.fn.input('Directory: ', '', 'dir')
+  if dir ~= '' then
+    require('telescope.builtin').find_files({ cwd = dir })
+  end
+end, { desc = 'Find files in directory' })
+vim.keymap.set('n', '<leader>fD', function()
+  local dir = vim.fn.input('Directory: ', '', 'dir')
+  if dir ~= '' then
+    require('telescope.builtin').live_grep({ cwd = dir })
+  end
+end, { desc = 'Grep in directory' })
