@@ -1,6 +1,8 @@
 -- Options
 vim.g.mapleader = " "
 vim.opt.autoread = true
+vim.opt.clipboard = "unnamedplus"
+vim.opt.equalalways = false
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/site/pack/lazy/opt/lazy.nvim"
@@ -41,6 +43,12 @@ require("lazy").setup({
     dependencies = { "nvim-tree/nvim-web-devicons" },
     ft = { "markdown" },
     opts = {},
+  },
+  {
+    "szw/vim-maximizer",
+    keys = {
+      { "<leader>z", "<cmd>MaximizerToggle<CR>", desc = "Toggle maximize window" },
+    },
   },
 })
 
