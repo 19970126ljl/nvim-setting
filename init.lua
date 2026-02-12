@@ -57,6 +57,10 @@ require("lazy").setup({
     },
     config = function()
       require("claude-code").setup({
+        window = {
+          position = "botright vertical",
+          split_ratio = 0.4,
+        },
         keymaps = {
           toggle = {
             normal = "<leader>cc",
