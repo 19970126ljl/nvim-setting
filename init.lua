@@ -50,6 +50,22 @@ require("lazy").setup({
       { "<leader>z", "<cmd>MaximizerToggle<CR>", desc = "Toggle maximize window" },
     },
   },
+  {
+    "greggh/claude-code.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      require("claude-code").setup({
+        keymaps = {
+          toggle = {
+            normal = "<leader>cc",
+            terminal = "<leader>cc",
+          },
+        },
+      })
+    end,
+  },
 })
 
 -- Keybindings for nvim-tree
