@@ -4,6 +4,11 @@ vim.opt.autoread = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.equalalways = false
 
+-- Terminal rendering
+vim.opt.termguicolors = true
+vim.cmd([[let &t_Cs = "\e[4:3m"]])
+vim.cmd([[let &t_Ce = "\e[4:0m"]])
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/site/pack/lazy/opt/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
