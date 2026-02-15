@@ -7,7 +7,7 @@ vim.opt.equalalways = false
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/site/pack/lazy/opt/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
+  vim.fn.system({ "git", "clone", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -70,6 +70,8 @@ require("lazy").setup({
       })
     end,
   },
+}, {
+  git = { filter = false },
 })
 
 -- Keybindings for nvim-tree
