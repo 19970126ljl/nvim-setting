@@ -3,6 +3,7 @@ vim.g.mapleader = " "
 vim.opt.autoread = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.equalalways = false
+vim.o.mouse = ""
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/site/pack/lazy/opt/lazy.nvim"
